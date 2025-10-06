@@ -15,15 +15,9 @@ import csv
 
 lista_produtos = []
 
-def converter_preco(preco_str):
-    # Remove R$, espaços e substitui vírgula por ponto
-    preco_str = preco_str.replace("R$", "").replace(".", "").replace(",", ".").strip()
-    return float(preco_str)
-
 def pesquisa_mercado_livre(produto):
     if ' ' in produto:
         produto = produto.replace(' ','-')
-
 
     headers = {
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36'
@@ -45,7 +39,7 @@ def pesquisa_mercado_livre(produto):
         }
         lista_produtos.append(produto_dicionario)
 
-    nome_arquivo = 'produtos_mercado_livre_novo.csv'
+    nome_arquivo = 'produtos_mercado_livre.csv'
     with open(nome_arquivo, 'w', newline='', encoding='utf-8') as arquivo_csv:
         colunas = ['DESCRIÇÃO', 'PREÇO', 'LINK']
         escritor = csv.DictWriter(arquivo_csv, fieldnames=colunas)
@@ -57,5 +51,3 @@ def pesquisa_mercado_livre(produto):
     return nome_arquivo
 
 pesquisa_mercado_livre('xbox series s')#insira seu produto aqui
-
-
