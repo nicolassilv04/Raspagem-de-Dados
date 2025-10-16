@@ -36,8 +36,8 @@ pip install requests beautifulsoup4
 3.  Altere o nome do produto dentro da função `pesquisa_mercado_livre()` para o item que você deseja pesquisar.
 
     ```python
-    # Altere 'xbox series s' para o produto que você deseja pesquisar
-    pesquisa_mercado_livre('xbox series s')
+    # Altere para o produto que você deseja pesquisar
+    pesquisa_mercado_livre('card pokemon')
     ```
 
 4.  Salve o arquivo e execute-o pelo terminal:
